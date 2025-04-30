@@ -25,4 +25,12 @@ export class DetailComponent {
       }
 
     }
+
+
+    addMarksToStudent(newMarks: number[]){
+      if (this.student) {
+        this.studentServ.addMarks(this.student?.id, newMarks).then(modifiedStudent => this.student = modifiedStudent)
+      }
+      
+    }
 }
