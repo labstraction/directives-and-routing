@@ -11,7 +11,12 @@ import { CommonModule } from '@angular/common';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
+
   title = 'directive-and-routing';
 
   authServ = inject(AuthService);
+
+  logout() {
+    this.authServ.isAuth = false;
+  }
 }
