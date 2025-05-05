@@ -29,17 +29,24 @@ export class StudentService {
     const patchValue = {marks: marks}
 
     return fetch(this.BASE_URL + this.STUDENTS_ENDPOINT + id, {
-      method: 'PATCH',
+      method: 'PUT',
       headers: {'content-type':'application/json'},
       body: JSON.stringify(patchValue)
     }).then(res => {
 
           return res.json();
       
-      // handle error
+
     }).catch(error => {
-      // handle error
+
     })
   }
+
+  // addStudent(): Promise<Student>{
+  //   const testStudent: Student = {
+  //     name: 'pippo';
+
+  //   }
+  // }
 
 }

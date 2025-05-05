@@ -1,4 +1,4 @@
-import { Directive, ElementRef, inject, Input } from '@angular/core';
+import { Directive, ElementRef, HostListener, inject, Input } from '@angular/core';
 
 @Directive({
   selector: '[appSuperBtn]'
@@ -6,6 +6,14 @@ import { Directive, ElementRef, inject, Input } from '@angular/core';
 export class SuperBtnDirective {
 
   el = inject(ElementRef)
+
+  @HostListener('mouseover') bigger(){
+    this.el.nativeElement.style.transform = 'scale(3)'
+  }
+
+  @HostListener('mouseleave') smaller(){
+    this.el.nativeElement.style.transform = 'scale(1)'
+  }
 
   @Input({alias: 'appSuperBtn'}) set backgroundColor(value: string){
     if (value) {

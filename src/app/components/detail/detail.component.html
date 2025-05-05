@@ -8,9 +8,13 @@
             <span>{{mark}} </span>
         }
     </div>
-    <form>
-        <label for="mark">Aggiungi un voto</label>
-        <input type="number" name="mark" id="mark">
-        <button type="submit">aggiungi</button>
-    </form>
+    @if (authServ.isAuth) {
+        <form>
+            <label for="mark">Aggiungi un voto</label>
+            <input type="number" name="mark" id="mark">
+            <button appSuperBtn type="submit">aggiungi</button>
+        </form>
+        <button (click)="addMarksToStudent()">provami</button>
+    }
+
 }
